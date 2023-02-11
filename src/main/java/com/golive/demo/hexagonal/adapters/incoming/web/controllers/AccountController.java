@@ -1,11 +1,11 @@
-package com.golive.demo.hexagonal.adapters.source.web.controllers;
+package com.golive.demo.hexagonal.adapters.incoming.web.controllers;
 
-import com.golive.demo.hexagonal.adapters.source.web.controllers.request.CreateAccountRequest;
-import com.golive.demo.hexagonal.adapters.source.web.controllers.request.TransferRequest;
-import com.golive.demo.hexagonal.bankABC.BankABCCustomer;
-import com.golive.demo.hexagonal.bankABC.BankABCEmployee;
-import com.golive.demo.hexagonal.bankABC.dto.AccountDetails;
-import com.golive.demo.hexagonal.bankABC.exception.BankOperationException;
+import com.golive.demo.hexagonal.adapters.incoming.web.controllers.request.TransferRequest;
+import com.golive.demo.hexagonal.adapters.incoming.web.controllers.request.CreateAccountRequest;
+import com.golive.demo.hexagonal.bankabc.ports.incoming.BankABCCustomer;
+import com.golive.demo.hexagonal.bankabc.ports.incoming.BankABCEmployee;
+import com.golive.demo.hexagonal.bankabc.dto.AccountDetails;
+import com.golive.demo.hexagonal.bankabc.exception.BankOperationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;

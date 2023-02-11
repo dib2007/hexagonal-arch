@@ -1,8 +1,10 @@
-package com.golive.demo.hexagonal.adapters.target.repository.db;
+package com.golive.demo.hexagonal.adapters.outgoing;
 
-import com.golive.demo.hexagonal.bankABC.dto.AccountDetails;
-import com.golive.demo.hexagonal.bankABC.exception.RepositoryException;
-import com.golive.demo.hexagonal.bankABC.repository.AccountRepository;
+import com.golive.demo.hexagonal.adapters.outgoing.repository.db.AccountJPARepository;
+import com.golive.demo.hexagonal.adapters.outgoing.repository.db.AccountsEntity;
+import com.golive.demo.hexagonal.bankabc.dto.AccountDetails;
+import com.golive.demo.hexagonal.bankabc.exception.RepositoryException;
+import com.golive.demo.hexagonal.bankabc.ports.outgoing.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 

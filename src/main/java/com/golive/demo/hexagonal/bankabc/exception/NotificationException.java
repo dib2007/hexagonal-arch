@@ -1,4 +1,4 @@
-package com.golive.demo.hexagonal.bankABC.exception;
+package com.golive.demo.hexagonal.bankabc.exception;
 
 public class NotificationException extends Exception {
 }

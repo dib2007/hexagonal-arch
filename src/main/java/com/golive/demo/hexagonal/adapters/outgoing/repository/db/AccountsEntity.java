@@ -1,4 +1,4 @@
-package com.golive.demo.hexagonal.adapters.target.repository.db;
+package com.golive.demo.hexagonal.adapters.outgoing.repository.db;
 
 
 import jakarta.persistence.Entity;

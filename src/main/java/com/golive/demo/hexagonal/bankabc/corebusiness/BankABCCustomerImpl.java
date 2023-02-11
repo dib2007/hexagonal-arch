@@ -1,8 +1,9 @@
-package com.golive.demo.hexagonal.bankABC;
+package com.golive.demo.hexagonal.bankabc.corebusiness;
 
-import com.golive.demo.hexagonal.bankABC.exception.BankOperationException;
-import com.golive.demo.hexagonal.bankABC.exception.RepositoryException;
-import com.golive.demo.hexagonal.bankABC.repository.AccountRepository;
+import com.golive.demo.hexagonal.bankabc.exception.BankOperationException;
+import com.golive.demo.hexagonal.bankabc.exception.RepositoryException;
+import com.golive.demo.hexagonal.bankabc.ports.incoming.BankABCCustomer;
+import com.golive.demo.hexagonal.bankabc.ports.outgoing.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;

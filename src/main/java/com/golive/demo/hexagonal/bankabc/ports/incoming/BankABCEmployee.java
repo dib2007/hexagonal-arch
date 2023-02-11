@@ -1,7 +1,7 @@
-package com.golive.demo.hexagonal.bankABC;
+package com.golive.demo.hexagonal.bankabc.ports.incoming;
 
-import com.golive.demo.hexagonal.bankABC.dto.AccountDetails;
-import com.golive.demo.hexagonal.bankABC.exception.BankOperationException;
+import com.golive.demo.hexagonal.bankabc.dto.AccountDetails;
+import com.golive.demo.hexagonal.bankabc.exception.BankOperationException;
 
 public interface BankABCEmployee extends BankABC {
 

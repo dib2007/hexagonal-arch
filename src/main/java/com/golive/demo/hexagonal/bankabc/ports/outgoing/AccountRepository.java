@@ -1,7 +1,7 @@
-package com.golive.demo.hexagonal.bankABC.repository;
+package com.golive.demo.hexagonal.bankabc.ports.outgoing;
 
-import com.golive.demo.hexagonal.bankABC.dto.AccountDetails;
-import com.golive.demo.hexagonal.bankABC.exception.RepositoryException;
+import com.golive.demo.hexagonal.bankabc.dto.AccountDetails;
+import com.golive.demo.hexagonal.bankabc.exception.RepositoryException;
 
 public interface AccountRepository {
 

@@ -1,6 +1,6 @@
-package com.golive.demo.hexagonal.bankABC.notification;
+package com.golive.demo.hexagonal.bankabc.notification;
 
-import com.golive.demo.hexagonal.bankABC.exception.NotificationException;
+import com.golive.demo.hexagonal.bankabc.exception.NotificationException;
 
 public interface UserNotification {
 

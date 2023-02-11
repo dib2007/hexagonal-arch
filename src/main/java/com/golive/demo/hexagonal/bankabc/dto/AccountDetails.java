@@ -1,4 +1,4 @@
-package com.golive.demo.hexagonal.bankABC.dto;
+package com.golive.demo.hexagonal.bankabc.dto;
 
 import lombok.Builder;
 import lombok.Data;
