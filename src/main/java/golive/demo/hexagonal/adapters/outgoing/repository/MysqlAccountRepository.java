@@ -1,4 +1,4 @@
-package golive.demo.hexagonal.adapters.outgoing;
+package golive.demo.hexagonal.adapters.outgoing.repository;
 
 import golive.demo.hexagonal.adapters.outgoing.repository.db.AccountJPARepository;
 import golive.demo.hexagonal.adapters.outgoing.repository.db.AccountsEntity;
