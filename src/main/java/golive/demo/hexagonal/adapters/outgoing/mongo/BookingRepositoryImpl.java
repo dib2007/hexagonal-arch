@@ -21,7 +21,7 @@ public class BookingRepositoryImpl implements BookingRepository {
     MovieMongoRepository movieMongoRepository;
 
     @Override
-    public void saveBooking(BookingDetails bookingDetails) {
+    public String saveBooking(BookingDetails bookingDetails) {
         Optional<MovieDocument> movieDocument = movieMongoRepository.findById(bookingDetails.getMovieId());
         if (movieDocument.isPresent()) {
             BookingDocument bookingDocument = new BookingDocument();
@@ -32,9 +32,10 @@ public class BookingRepositoryImpl implements BookingRepository {
             bookingDocument.setStartTime(bookingDetails.getSlot().getStartTime());
             bookingDocument.setEndTime(bookingDetails.getSlot().getEndTime());
             bookingDocument.setSeats(bookingDetails.getSeats());
-            bookingMongoRepository.save(bookingDocument);
+            return bookingMongoRepository.save(bookingDocument).getId();
         } else {
             log.info("Could not fetch a movie with movie ID: {}", bookingDetails.getMovieId());
+            throw new IllegalArgumentException(String.format("Invalid movie id: %s", bookingDetails.getMovieId()));
         }
     }
 

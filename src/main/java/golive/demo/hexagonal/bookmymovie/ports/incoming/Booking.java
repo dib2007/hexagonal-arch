@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface Booking {
 
-    void book(BookingDetails bookingDetails) throws BookingException;
+    String book(BookingDetails bookingDetails) throws BookingException;
     List<BookingDetails> getBookings(String userId) throws BookingException;
     BookingDetails getBooking(String bookingId) throws BookingException;
 

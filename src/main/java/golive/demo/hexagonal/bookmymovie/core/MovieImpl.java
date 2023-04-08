@@ -21,7 +21,7 @@ public class MovieImpl implements Movie {
     }
 
     @Override
-    public void createMovie(MovieDetails movieDetails) throws MovieException {
-        movieRepository.save(movieDetails);
+    public String createMovie(MovieDetails movieDetails) throws MovieException {
+        return movieRepository.save(movieDetails);
     }
 }

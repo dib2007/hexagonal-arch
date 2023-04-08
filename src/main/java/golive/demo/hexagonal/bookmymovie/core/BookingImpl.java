@@ -19,9 +19,10 @@ public class BookingImpl implements Booking {
     Notification notification;
 
     @Override
-    public void book(BookingDetails bookingDetails) throws BookingException {
-        bookingRepository.saveBooking(bookingDetails);
+    public String book(BookingDetails bookingDetails) throws BookingException {
+        String bookingId = bookingRepository.saveBooking(bookingDetails);
         notification.sendBookingSuccessNotification(bookingDetails);
+        return bookingId;
     }
 
     @Override

@@ -9,6 +9,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController()
 @RequestMapping(path = "/bookings")
 public class BookingWebResource {
@@ -17,13 +19,18 @@ public class BookingWebResource {
     private Booking booking;
 
     @PostMapping(path = "/", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Void> book(@RequestBody BookingDetails bookingDetails, @RequestHeader("user-id") String userId) throws BookingException {
-        booking.book(bookingDetails);
-        return ResponseEntity.status(HttpStatus.CREATED).build();
+    public ResponseEntity<String> book(@RequestBody BookingDetails bookingDetails) throws BookingException {
+        String bookingId = booking.book(bookingDetails);
+        return ResponseEntity.status(HttpStatus.CREATED).body(bookingId);
     }
 
     @GetMapping(path = "/{bookingId}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<BookingDetails> getBookingById(@PathVariable(name = "bookingId") String bookingId) throws BookingException {
         return ResponseEntity.ok(booking.getBooking(bookingId));
+    }
+
+    @GetMapping(path = "/", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<BookingDetails>> getUserBookings(@RequestParam(name = "userId") String userId) throws BookingException {
+        return ResponseEntity.ok(booking.getBookings(userId));
     }
 }

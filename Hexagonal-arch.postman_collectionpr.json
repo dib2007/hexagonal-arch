@@ -1,0 +1,111 @@
+{
+	"info": {
+		"_postman_id": "2269689a-db9c-4c0a-8129-d3ef1e06277c",
+		"name": "Hexagonal-arch",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Movie",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"movieName\": \"Shutter Island\",\n\t\"actors\": [\"Leonardo Wilhelm DiCaprio\", \"Mark Alan Ruffalo\"],\n\t\"availableSlots\": [{\n\t\t\"startTime\": \"1680954090780\",\n\t\t\"endTime\": \"1680955106204\"\n\t}]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/movies/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movies",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all movies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/movies/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movies",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create booking",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "user-id",
+						"value": "user1"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"movieId\": \"64313656005ddb7a0937edb8\",\n\t\"seats\": [\"D1\",  \"D2\"],\n\t\"slot\": {\n\t\t\"startTine\": 1680954090780,\n\t\t\"endTime\": 1680955106204\n\t}\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/bookings/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bookings",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get booking",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/bookings/643155610247ef78f0b437c0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bookings",
+						"643155610247ef78f0b437c0"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

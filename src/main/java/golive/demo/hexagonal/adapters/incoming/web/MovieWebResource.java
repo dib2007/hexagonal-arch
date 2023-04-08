@@ -24,8 +24,8 @@ public class MovieWebResource {
     }
 
     @PostMapping(path = "/", consumes = MediaType.APPLICATION_JSON_VALUE)
-    private ResponseEntity<Void> save(@RequestBody MovieDetails movieDetails) throws MovieException {
-        movie.createMovie(movieDetails);
-        return ResponseEntity.status(HttpStatus.CREATED).build();
+    private ResponseEntity<String> save(@RequestBody MovieDetails movieDetails) throws MovieException {
+        String movieId = movie.createMovie(movieDetails);
+        return ResponseEntity.status(HttpStatus.CREATED).body(movieId);
     }
 }

@@ -27,11 +27,11 @@ public class MovieRepositoryImpl implements MovieRepository {
     }
 
     @Override
-    public void save(MovieDetails movieDetails) {
+    public String save(MovieDetails movieDetails) {
         MovieDocument movieDocument = new MovieDocument();
         movieDocument.setMovieName(movieDetails.getMovieName());
         movieDocument.setActors(movieDetails.getActors());
         movieDocument.setSlots(movieDetails.getAvailableSlots());
-        movieMongoRepository.save(movieDocument);
+        return movieMongoRepository.save(movieDocument).getId();
     }
 }
